@@ -1,3 +1,4 @@
 *.aedtresults
 *.s2p
 PersonalLib
+*.log

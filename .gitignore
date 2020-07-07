@@ -2,3 +2,4 @@
 *.s2p
 PersonalLib
 *.log
+secrets.json

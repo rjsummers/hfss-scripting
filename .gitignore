@@ -3,3 +3,4 @@
 PersonalLib
 *.log
 secrets.json
+analyze_design.py

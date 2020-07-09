@@ -2,6 +2,16 @@ import subprocess
 import json
 import smtplib
 from email.message import EmailMessage
+from pathlib import Path
+from jinja2 import Environment, FileSystemLoader
+
+hfss_params = {}
+hfss_params['project_path'] = Path.cwd() / 'rectangular_waveguide.aedt'
+hfss_params['output_path'] = Path.cwd() / 'rectangular_waveguide_HFSSDesign1.s2p'
+
+env = Environment(loader=FileSystemLoader('templates'))
+template = env.get_template('analyze_design_template.py')
+template.stream(hfss_params).dump('analyze_design.py')
 
 subprocess.run([r'C:\Program Files\AnsysEM\AnsysEM19.4\Win64\ansysedt.exe',
                 "-RunScriptAndExit", "analyze_design.py"])

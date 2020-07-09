@@ -1,12 +1,7 @@
-# ----------------------------------------------
-# Script Recorded by ANSYS Electronics Desktop Version 2019.2.0
-# 13:33:48  Jul 03, 2020
-# ----------------------------------------------
 import ScriptEnv
 
-project_path = 'F:/Dropbox/dev/hfss-scripting/rectangular_waveguide.aedt'
-output_path = ('F:/Dropbox/dev/hfss-scripting/' +
-               'rectangular_waveguide_HFSSDesign1.s2p')
+project_path = r"{{ project_path }}"
+output_path = r"{{ output_path }}"
 z0 = 500
 
 ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")

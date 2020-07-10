@@ -6,13 +6,17 @@ from email.message import EmailMessage
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
 
+default_odir = Path('data/hfss')
+
 parser = argparse.ArgumentParser()
 parser.add_argument('-p', '--project', default='Project1.aedt')
+parser.add_argument('-o', '--output', default=default_odir)
 args = parser.parse_args()
 
 hfss_params = {}
 hfss_params['project_path'] = Path.cwd() / args.project
-hfss_params['output_path'] = Path.cwd() / 'rectangular_waveguide_HFSSDesign1.s2p'
+hfss_params['output_path'] = (Path.cwd() / default_odir /
+                              'rectangular_waveguide_HFSSDesign1.s2p')
 
 env = Environment(loader=FileSystemLoader('templates'))
 template = env.get_template('analyze_design_template.py')

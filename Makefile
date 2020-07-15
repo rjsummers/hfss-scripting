@@ -1,2 +1,2 @@
 hfss:
-	python run_hfss.py -p rectangular_waveguide.aedt
+	python tools/hfss/run_hfss.py -p rectangular_waveguide.aedt
